@@ -5,7 +5,6 @@ mutable struct Graph{T} <: AbstractNexus{T}
     fadj::Dict{T,Dict{T,Dict{Int,Nothing}}}
 end
 
-eltype(::Graph{T}) where {T} = T
 is_directed(::Graph{T}) where {T} = false
 Graph{T}() where {T} = begin
     fadj = Dict{T,Dict{T,Dict{Int,Nothing}}}()

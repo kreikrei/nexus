@@ -19,16 +19,13 @@ function show(io::IO, ait::AbstractArcIter{T}) where {T}
     print(io, "ArcIter $T $(length(ait.list))")
 end
 
+eltype(::AbstractNexus{T}) where T = T
+
 nn(g::AbstractNexus) = g.nn
 na(g::AbstractNexus) = g.na
-
-fadj(g::AbstracNexus) = g.fadj
-
+fadj(g::AbstractNexus) = g.fadj
 nodes(g::AbstractNexus) = g.fadj |> keys
 
 src(a::AbstractArc) = a.src
 tgt(a::AbstractArc) = a.tgt
 key(a::AbstractArc) = a.key
-
-abstract type AbstractMetaNexus{T} end <: AbstractNexus{T}
-const PropDict = Dict{Symbol,Any}

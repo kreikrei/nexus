@@ -2,8 +2,6 @@ struct ArcIter{T} <: AbstractArcIter{T}
     list::Vector{Arc{T}}
 end
 
-ArcIter(list::Vector{Arc{T}}) where {T} = ArcIter{T}(list)
-
 @forward ArcIter.list iterate, eltype, length
 
 function arcs(g::Graph{T}) where {T}

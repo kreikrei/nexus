@@ -1,0 +1,603 @@
+u,v,moda
+Ambon,Jakarta,KPNG
+Ambon,Surabaya,KPNG
+Ambon,Makassar,KPNG
+Ambon,Ternate,KPNG
+Ambon,Manado,KPNG
+Ambon,Jayapura,KPNG
+Balikpapan,Pontianak,TRUK
+Balikpapan,Palangkaraya,TRUK
+Balikpapan,Banjarmasin,TRUK
+Balikpapan,Samarinda,TRUK
+Balikpapan,Tarakan,TRUK
+Balikpapan,Jakarta,KBRG
+Balikpapan,Surabaya,KBRG
+Balikpapan,Samarinda,KBRG
+Balikpapan,Palu,KBRG
+Balikpapan,Manado,KBRG
+Balikpapan,Kendari,KBRG
+Banda Aceh,Lhokseumawe,TRUK
+Banda Aceh,Medan,TRUK
+Banda Aceh,Sibolga,TRUK
+Banda Aceh,Pematang Siantar,TRUK
+Banda Aceh,Padang,TRUK
+Banda Aceh,Pekanbaru,TRUK
+Banda Aceh,Bengkulu,TRUK
+Banda Aceh,Jambi,TRUK
+Banda Aceh,Palembang,TRUK
+Banda Aceh,Lampung,TRUK
+Banda Aceh,Pangkal Pinang,TRUK
+Bandung,Serang,TRUK
+Bandung,Jakarta,TRUK
+Bandung,Tasikmalaya,TRUK
+Bandung,Cirebon,TRUK
+Bandung,Tegal,TRUK
+Bandung,Purwokerto,TRUK
+Bandung,Yogyakarta,TRUK
+Bandung,Semarang,TRUK
+Bandung,Solo,TRUK
+Bandung,Kediri,TRUK
+Bandung,Malang,TRUK
+Bandung,Surabaya,TRUK
+Bandung,Jember,TRUK
+Bandung,Jakarta,KRTA
+Bandung,Surabaya,KRTA
+Bandung,Cirebon,KRTA
+Bandung,Tegal,KRTA
+Bandung,Semarang,KRTA
+Bandung,Tasikmalaya,KRTA
+Bandung,Yogyakarta,KRTA
+Bandung,Solo,KRTA
+Bandung,Malang,KRTA
+Bandung,Kediri,KRTA
+Banjarmasin,Pontianak,TRUK
+Banjarmasin,Palangkaraya,TRUK
+Banjarmasin,Balikpapan,TRUK
+Banjarmasin,Samarinda,TRUK
+Banjarmasin,Tarakan,TRUK
+Banjarmasin,Jakarta,KBRG
+Batam,Jakarta,KBRG
+Batam,Jakarta,KPNG
+Batam,Medan,KPNG
+Bengkulu,Banda Aceh,TRUK
+Bengkulu,Lhokseumawe,TRUK
+Bengkulu,Medan,TRUK
+Bengkulu,Sibolga,TRUK
+Bengkulu,Pematang Siantar,TRUK
+Bengkulu,Padang,TRUK
+Bengkulu,Pekanbaru,TRUK
+Bengkulu,Jambi,TRUK
+Bengkulu,Palembang,TRUK
+Bengkulu,Lampung,TRUK
+Bengkulu,Pangkal Pinang,TRUK
+Cirebon,Serang,TRUK
+Cirebon,Jakarta,TRUK
+Cirebon,Bandung,TRUK
+Cirebon,Tasikmalaya,TRUK
+Cirebon,Tegal,TRUK
+Cirebon,Purwokerto,TRUK
+Cirebon,Yogyakarta,TRUK
+Cirebon,Semarang,TRUK
+Cirebon,Solo,TRUK
+Cirebon,Kediri,TRUK
+Cirebon,Malang,TRUK
+Cirebon,Surabaya,TRUK
+Cirebon,Jember,TRUK
+Cirebon,Jakarta,KRTA
+Cirebon,Bandung,KRTA
+Denpasar,Mataram,TRUK
+Denpasar,Surabaya,TRUK
+Gorontalo,Mamuju,TRUK
+Gorontalo,Makassar,TRUK
+Gorontalo,Palu,TRUK
+Gorontalo,Kendari,TRUK
+Gorontalo,Manado,TRUK
+Jakarta,Serang,TRUK
+Jakarta,Bandung,TRUK
+Jakarta,Tasikmalaya,TRUK
+Jakarta,Cirebon,TRUK
+Jakarta,Tegal,TRUK
+Jakarta,Purwokerto,TRUK
+Jakarta,Yogyakarta,TRUK
+Jakarta,Semarang,TRUK
+Jakarta,Solo,TRUK
+Jakarta,Kediri,TRUK
+Jakarta,Malang,TRUK
+Jakarta,Surabaya,TRUK
+Jakarta,Jember,TRUK
+Jakarta,Lampung,TRUK
+Jakarta,Surabaya,KBRG
+Jakarta,Balikpapan,KBRG
+Jakarta,Samarinda,KBRG
+Jakarta,Palu,KBRG
+Jakarta,Manado,KBRG
+Jakarta,Kendari,KBRG
+Jakarta,Medan,KBRG
+Jakarta,Pekanbaru,KBRG
+Jakarta,Palembang,KBRG
+Jakarta,Banjarmasin,KBRG
+Jakarta,Pontianak,KBRG
+Jakarta,Batam,KBRG
+Jakarta,Makassar,KBRG
+Jakarta,Batam,KPNG
+Jakarta,Medan,KPNG
+Jakarta,Surabaya,KPNG
+Jakarta,Makassar,KPNG
+Jakarta,Ambon,KPNG
+Jakarta,Ternate,KPNG
+Jakarta,Manado,KPNG
+Jakarta,Manokwari,KPNG
+Jakarta,Jayapura,KPNG
+Jakarta,Kupang,KPNG
+Jakarta,Surabaya,KRTA
+Jakarta,Cirebon,KRTA
+Jakarta,Semarang,KRTA
+Jakarta,Tegal,KRTA
+Jakarta,Solo,KRTA
+Jakarta,Purwokerto,KRTA
+Jakarta,Yogyakarta,KRTA
+Jakarta,Malang,KRTA
+Jakarta,Kediri,KRTA
+Jakarta,Bandung,KRTA
+Jakarta,Tasikmalaya,KRTA
+Jambi,Banda Aceh,TRUK
+Jambi,Lhokseumawe,TRUK
+Jambi,Medan,TRUK
+Jambi,Sibolga,TRUK
+Jambi,Pematang Siantar,TRUK
+Jambi,Padang,TRUK
+Jambi,Pekanbaru,TRUK
+Jambi,Bengkulu,TRUK
+Jambi,Palembang,TRUK
+Jambi,Lampung,TRUK
+Jambi,Pangkal Pinang,TRUK
+Jayapura,Manokwari,TRUK
+Jayapura,Jakarta,KPNG
+Jayapura,Surabaya,KPNG
+Jayapura,Makassar,KPNG
+Jayapura,Manokwari,KPNG
+Jayapura,Ambon,KPNG
+Jember,Serang,TRUK
+Jember,Jakarta,TRUK
+Jember,Bandung,TRUK
+Jember,Tasikmalaya,TRUK
+Jember,Cirebon,TRUK
+Jember,Tegal,TRUK
+Jember,Purwokerto,TRUK
+Jember,Yogyakarta,TRUK
+Jember,Semarang,TRUK
+Jember,Solo,TRUK
+Jember,Kediri,TRUK
+Jember,Malang,TRUK
+Jember,Surabaya,TRUK
+Jember,Surabaya,KRTA
+Jember,Yogyakarta,KRTA
+Jember,Purwokerto,KRTA
+Jember,Malang,KRTA
+Kediri,Serang,TRUK
+Kediri,Jakarta,TRUK
+Kediri,Bandung,TRUK
+Kediri,Tasikmalaya,TRUK
+Kediri,Cirebon,TRUK
+Kediri,Tegal,TRUK
+Kediri,Purwokerto,TRUK
+Kediri,Yogyakarta,TRUK
+Kediri,Semarang,TRUK
+Kediri,Solo,TRUK
+Kediri,Malang,TRUK
+Kediri,Surabaya,TRUK
+Kediri,Jember,TRUK
+Kediri,Bandung,KRTA
+Kediri,Tasikmalaya,KRTA
+Kediri,Jakarta,KRTA
+Kediri,Solo,KRTA
+Kediri,Semarang,KRTA
+Kediri,Tegal,KRTA
+Kediri,Cirebon,KRTA
+Kediri,Yogyakarta,KRTA
+Kediri,Purwokerto,KRTA
+Kediri,Serang,KRTA
+Kendari,Mamuju,TRUK
+Kendari,Makassar,TRUK
+Kendari,Palu,TRUK
+Kendari,Gorontalo,TRUK
+Kendari,Manado,TRUK
+Kendari,Jakarta,KBRG
+Kendari,Surabaya,KBRG
+Kendari,Balikpapan,KBRG
+Kendari,Samarinda,KBRG
+Kendari,Palu,KBRG
+Kendari,Manado,KBRG
+Kupang,Jakarta,KPNG
+Kupang,Surabaya,KPNG
+Kupang,Makassar,KPNG
+Lampung,Banda Aceh,TRUK
+Lampung,Jakarta,TRUK
+Lampung,Lhokseumawe,TRUK
+Lampung,Medan,TRUK
+Lampung,Sibolga,TRUK
+Lampung,Pematang Siantar,TRUK
+Lampung,Padang,TRUK
+Lampung,Pekanbaru,TRUK
+Lampung,Bengkulu,TRUK
+Lampung,Jambi,TRUK
+Lampung,Palembang,TRUK
+Lampung,Pangkal Pinang,TRUK
+Lampung,Serang,TRUK
+Lampung,Palembang,KRTA
+Lhokseumawe,Banda Aceh,TRUK
+Lhokseumawe,Medan,TRUK
+Lhokseumawe,Sibolga,TRUK
+Lhokseumawe,Pematang Siantar,TRUK
+Lhokseumawe,Padang,TRUK
+Lhokseumawe,Pekanbaru,TRUK
+Lhokseumawe,Bengkulu,TRUK
+Lhokseumawe,Jambi,TRUK
+Lhokseumawe,Palembang,TRUK
+Lhokseumawe,Lampung,TRUK
+Lhokseumawe,Pangkal Pinang,TRUK
+Makassar,Mamuju,TRUK
+Makassar,Palu,TRUK
+Makassar,Kendari,TRUK
+Makassar,Gorontalo,TRUK
+Makassar,Manado,TRUK
+Makassar,Jakarta,KBRG
+Makassar,Jakarta,KPNG
+Makassar,Surabaya,KPNG
+Makassar,Ternate,KPNG
+Makassar,Manado,KPNG
+Makassar,Manokwari,KPNG
+Makassar,Jayapura,KPNG
+Makassar,Kupang,KPNG
+Malang,Serang,TRUK
+Malang,Jakarta,TRUK
+Malang,Bandung,TRUK
+Malang,Tasikmalaya,TRUK
+Malang,Cirebon,TRUK
+Malang,Tegal,TRUK
+Malang,Purwokerto,TRUK
+Malang,Yogyakarta,TRUK
+Malang,Semarang,TRUK
+Malang,Solo,TRUK
+Malang,Kediri,TRUK
+Malang,Surabaya,TRUK
+Malang,Jember,TRUK
+Malang,Jakarta,KRTA
+Malang,Surabaya,KRTA
+Malang,Solo,KRTA
+Malang,Yogyakarta,KRTA
+Malang,Purwokerto,KRTA
+Malang,Cirebon,KRTA
+Malang,Kediri,KRTA
+Malang,Semarang,KRTA
+Malang,Tegal,KRTA
+Malang,Bandung,KRTA
+Malang,Tasikmalaya,KRTA
+Malang,Jember,KRTA
+Mamuju,Makassar,TRUK
+Mamuju,Palu,TRUK
+Mamuju,Kendari,TRUK
+Mamuju,Gorontalo,TRUK
+Mamuju,Manado,TRUK
+Manado,Mamuju,TRUK
+Manado,Makassar,TRUK
+Manado,Palu,TRUK
+Manado,Kendari,TRUK
+Manado,Gorontalo,TRUK
+Manado,Jakarta,KBRG
+Manado,Surabaya,KBRG
+Manado,Balikpapan,KBRG
+Manado,Samarinda,KBRG
+Manado,Palu,KBRG
+Manado,Kendari,KBRG
+Manado,Jakarta,KPNG
+Manado,Surabaya,KPNG
+Manado,Makassar,KPNG
+Manado,Ambon,KPNG
+Manado,Ternate,KPNG
+Manokwari,Jayapura,TRUK
+Manokwari,Jakarta,KPNG
+Manokwari,Surabaya,KPNG
+Manokwari,Makassar,KPNG
+Manokwari,Jayapura,KPNG
+Mataram,Denpasar,TRUK
+Medan,Banda Aceh,TRUK
+Medan,Lhokseumawe,TRUK
+Medan,Sibolga,TRUK
+Medan,Pematang Siantar,TRUK
+Medan,Padang,TRUK
+Medan,Pekanbaru,TRUK
+Medan,Bengkulu,TRUK
+Medan,Jambi,TRUK
+Medan,Palembang,TRUK
+Medan,Lampung,TRUK
+Medan,Pangkal Pinang,TRUK
+Medan,Jakarta,KBRG
+Medan,Jakarta,KPNG
+Medan,Batam,KPNG
+Medan,Pematang Siantar,KRTA
+Padang,Banda Aceh,TRUK
+Padang,Lhokseumawe,TRUK
+Padang,Medan,TRUK
+Padang,Sibolga,TRUK
+Padang,Pematang Siantar,TRUK
+Padang,Pekanbaru,TRUK
+Padang,Bengkulu,TRUK
+Padang,Jambi,TRUK
+Padang,Palembang,TRUK
+Padang,Lampung,TRUK
+Padang,Pangkal Pinang,TRUK
+Palangkaraya,Pontianak,TRUK
+Palangkaraya,Banjarmasin,TRUK
+Palangkaraya,Balikpapan,TRUK
+Palangkaraya,Samarinda,TRUK
+Palangkaraya,Tarakan,TRUK
+Palembang,Banda Aceh,TRUK
+Palembang,Lhokseumawe,TRUK
+Palembang,Medan,TRUK
+Palembang,Sibolga,TRUK
+Palembang,Pematang Siantar,TRUK
+Palembang,Padang,TRUK
+Palembang,Pekanbaru,TRUK
+Palembang,Bengkulu,TRUK
+Palembang,Jambi,TRUK
+Palembang,Lampung,TRUK
+Palembang,Pangkal Pinang,TRUK
+Palembang,Jakarta,KBRG
+Palembang,Lampung,KRTA
+Palu,Mamuju,TRUK
+Palu,Makassar,TRUK
+Palu,Kendari,TRUK
+Palu,Gorontalo,TRUK
+Palu,Manado,TRUK
+Palu,Samarinda,TRUK
+Palu,Jakarta,KBRG
+Palu,Surabaya,KBRG
+Palu,Balikpapan,KBRG
+Palu,Samarinda,KBRG
+Palu,Manado,KBRG
+Palu,Kendari,KBRG
+Pangkal Pinang,Banda Aceh,TRUK
+Pangkal Pinang,Lhokseumawe,TRUK
+Pangkal Pinang,Medan,TRUK
+Pangkal Pinang,Sibolga,TRUK
+Pangkal Pinang,Pematang Siantar,TRUK
+Pangkal Pinang,Padang,TRUK
+Pangkal Pinang,Pekanbaru,TRUK
+Pangkal Pinang,Bengkulu,TRUK
+Pangkal Pinang,Jambi,TRUK
+Pangkal Pinang,Palembang,TRUK
+Pangkal Pinang,Lampung,TRUK
+Pekanbaru,Banda Aceh,TRUK
+Pekanbaru,Lhokseumawe,TRUK
+Pekanbaru,Medan,TRUK
+Pekanbaru,Sibolga,TRUK
+Pekanbaru,Pematang Siantar,TRUK
+Pekanbaru,Padang,TRUK
+Pekanbaru,Bengkulu,TRUK
+Pekanbaru,Jambi,TRUK
+Pekanbaru,Palembang,TRUK
+Pekanbaru,Lampung,TRUK
+Pekanbaru,Pangkal Pinang,TRUK
+Pekanbaru,Jakarta,KBRG
+Pematang Siantar,Banda Aceh,TRUK
+Pematang Siantar,Lhokseumawe,TRUK
+Pematang Siantar,Medan,TRUK
+Pematang Siantar,Sibolga,TRUK
+Pematang Siantar,Padang,TRUK
+Pematang Siantar,Pekanbaru,TRUK
+Pematang Siantar,Bengkulu,TRUK
+Pematang Siantar,Jambi,TRUK
+Pematang Siantar,Palembang,TRUK
+Pematang Siantar,Lampung,TRUK
+Pematang Siantar,Pangkal Pinang,TRUK
+Pematang Siantar,Medan,KRTA
+Pontianak,Palangkaraya,TRUK
+Pontianak,Banjarmasin,TRUK
+Pontianak,Balikpapan,TRUK
+Pontianak,Samarinda,TRUK
+Pontianak,Tarakan,TRUK
+Pontianak,Jakarta,KBRG
+Purwokerto,Serang,TRUK
+Purwokerto,Jakarta,TRUK
+Purwokerto,Bandung,TRUK
+Purwokerto,Tasikmalaya,TRUK
+Purwokerto,Cirebon,TRUK
+Purwokerto,Tegal,TRUK
+Purwokerto,Yogyakarta,TRUK
+Purwokerto,Semarang,TRUK
+Purwokerto,Solo,TRUK
+Purwokerto,Kediri,TRUK
+Purwokerto,Malang,TRUK
+Purwokerto,Surabaya,TRUK
+Purwokerto,Jember,TRUK
+Purwokerto,Cirebon,KRTA
+Purwokerto,Jakarta,KRTA
+Purwokerto,Jember,KRTA
+Purwokerto,Yogyakarta,KRTA
+Purwokerto,Surabaya,KRTA
+Purwokerto,Tasikmalaya,KRTA
+Purwokerto,Bandung,KRTA
+Purwokerto,Semarang,KRTA
+Purwokerto,Tegal,KRTA
+Samarinda,Pontianak,TRUK
+Samarinda,Palangkaraya,TRUK
+Samarinda,Banjarmasin,TRUK
+Samarinda,Balikpapan,TRUK
+Samarinda,Tarakan,TRUK
+Samarinda,Palu,TRUK
+Samarinda,Jakarta,KBRG
+Samarinda,Surabaya,KBRG
+Samarinda,Balikpapan,KBRG
+Samarinda,Palu,KBRG
+Samarinda,Manado,KBRG
+Samarinda,Kendari,KBRG
+Semarang,Serang,TRUK
+Semarang,Jakarta,TRUK
+Semarang,Bandung,TRUK
+Semarang,Tasikmalaya,TRUK
+Semarang,Cirebon,TRUK
+Semarang,Tegal,TRUK
+Semarang,Purwokerto,TRUK
+Semarang,Yogyakarta,TRUK
+Semarang,Solo,TRUK
+Semarang,Kediri,TRUK
+Semarang,Malang,TRUK
+Semarang,Surabaya,TRUK
+Semarang,Jember,TRUK
+Semarang,Jakarta,KRTA
+Semarang,Tegal,KRTA
+Semarang,Cirebon,KRTA
+Semarang,Surabaya,KRTA
+Semarang,Purwokerto,KRTA
+Semarang,Solo,KRTA
+Serang,Jakarta,TRUK
+Serang,Bandung,TRUK
+Serang,Tasikmalaya,TRUK
+Serang,Cirebon,TRUK
+Serang,Tegal,TRUK
+Serang,Purwokerto,TRUK
+Serang,Yogyakarta,TRUK
+Serang,Semarang,TRUK
+Serang,Solo,TRUK
+Serang,Kediri,TRUK
+Serang,Malang,TRUK
+Serang,Surabaya,TRUK
+Serang,Jember,TRUK
+Serang,Lampung,TRUK
+Serang,Jakarta,KRTA
+Serang,Cirebon,KRTA
+Serang,Purwokerto,KRTA
+Serang,Yogyakarta,KRTA
+Serang,Solo,KRTA
+Serang,Kediri,KRTA
+Sibolga,Banda Aceh,TRUK
+Sibolga,Lhokseumawe,TRUK
+Sibolga,Medan,TRUK
+Sibolga,Pematang Siantar,TRUK
+Sibolga,Padang,TRUK
+Sibolga,Pekanbaru,TRUK
+Sibolga,Bengkulu,TRUK
+Sibolga,Jambi,TRUK
+Sibolga,Palembang,TRUK
+Sibolga,Lampung,TRUK
+Sibolga,Pangkal Pinang,TRUK
+Solo,Serang,TRUK
+Solo,Jakarta,TRUK
+Solo,Bandung,TRUK
+Solo,Tasikmalaya,TRUK
+Solo,Cirebon,TRUK
+Solo,Tegal,TRUK
+Solo,Purwokerto,TRUK
+Solo,Yogyakarta,TRUK
+Solo,Semarang,TRUK
+Solo,Kediri,TRUK
+Solo,Malang,TRUK
+Solo,Surabaya,TRUK
+Solo,Jember,TRUK
+Solo,Jakarta,KRTA
+Solo,Yogyakarta,KRTA
+Solo,Purwokerto,KRTA
+Solo,Cirebon,KRTA
+Solo,Bandung,KRTA
+Solo,Tasikmalaya,KRTA
+Solo,Semarang,KRTA
+Surabaya,Serang,TRUK
+Surabaya,Jakarta,TRUK
+Surabaya,Bandung,TRUK
+Surabaya,Tasikmalaya,TRUK
+Surabaya,Cirebon,TRUK
+Surabaya,Tegal,TRUK
+Surabaya,Purwokerto,TRUK
+Surabaya,Yogyakarta,TRUK
+Surabaya,Semarang,TRUK
+Surabaya,Solo,TRUK
+Surabaya,Kediri,TRUK
+Surabaya,Malang,TRUK
+Surabaya,Jember,TRUK
+Surabaya,Denpasar,TRUK
+Surabaya,Jakarta,KBRG
+Surabaya,Balikpapan,KBRG
+Surabaya,Samarinda,KBRG
+Surabaya,Palu,KBRG
+Surabaya,Manado,KBRG
+Surabaya,Kendari,KBRG
+Surabaya,Jakarta,KPNG
+Surabaya,Makassar,KPNG
+Surabaya,Ambon,KPNG
+Surabaya,Ternate,KPNG
+Surabaya,Manado,KPNG
+Surabaya,Manokwari,KPNG
+Surabaya,Jayapura,KPNG
+Surabaya,Kupang,KPNG
+Surabaya,Jakarta,KRTA
+Surabaya,Semarang,KRTA
+Surabaya,Cirebon,KRTA
+Surabaya,Tegal,KRTA
+Surabaya,Purwokerto,KRTA
+Surabaya,Bandung,KRTA
+Surabaya,Solo,KRTA
+Surabaya,Yogyakarta,KRTA
+Surabaya,Tasikmalaya,KRTA
+Surabaya,Jember,KRTA
+Surabaya,Malang,KRTA
+Tarakan,Pontianak,TRUK
+Tarakan,Palangkaraya,TRUK
+Tarakan,Banjarmasin,TRUK
+Tarakan,Balikpapan,TRUK
+Tarakan,Samarinda,TRUK
+Tasikmalaya,Serang,TRUK
+Tasikmalaya,Jakarta,TRUK
+Tasikmalaya,Bandung,TRUK
+Tasikmalaya,Cirebon,TRUK
+Tasikmalaya,Tegal,TRUK
+Tasikmalaya,Purwokerto,TRUK
+Tasikmalaya,Yogyakarta,TRUK
+Tasikmalaya,Semarang,TRUK
+Tasikmalaya,Solo,TRUK
+Tasikmalaya,Kediri,TRUK
+Tasikmalaya,Malang,TRUK
+Tasikmalaya,Surabaya,TRUK
+Tasikmalaya,Jember,TRUK
+Tasikmalaya,Bandung,KRTA
+Tegal,Serang,TRUK
+Tegal,Jakarta,TRUK
+Tegal,Bandung,TRUK
+Tegal,Tasikmalaya,TRUK
+Tegal,Cirebon,TRUK
+Tegal,Purwokerto,TRUK
+Tegal,Yogyakarta,TRUK
+Tegal,Semarang,TRUK
+Tegal,Solo,TRUK
+Tegal,Kediri,TRUK
+Tegal,Malang,TRUK
+Tegal,Surabaya,TRUK
+Tegal,Jember,TRUK
+Tegal,Jakarta,KRTA
+Tegal,Cirebon,KRTA
+Ternate,Jakarta,KPNG
+Ternate,Surabaya,KPNG
+Ternate,Makassar,KPNG
+Ternate,Ambon,KPNG
+Ternate,Manado,KPNG
+Yogyakarta,Serang,TRUK
+Yogyakarta,Jakarta,TRUK
+Yogyakarta,Bandung,TRUK
+Yogyakarta,Tasikmalaya,TRUK
+Yogyakarta,Cirebon,TRUK
+Yogyakarta,Tegal,TRUK
+Yogyakarta,Purwokerto,TRUK
+Yogyakarta,Semarang,TRUK
+Yogyakarta,Solo,TRUK
+Yogyakarta,Kediri,TRUK
+Yogyakarta,Malang,TRUK
+Yogyakarta,Surabaya,TRUK
+Yogyakarta,Jember,TRUK
+Yogyakarta,Jakarta,KRTA
+Yogyakarta,Surabaya,KRTA
+Yogyakarta,Purwokerto,KRTA
+Yogyakarta,Cirebon,KRTA
+Yogyakarta,Solo,KRTA
+Yogyakarta,Malang,KRTA
+Yogyakarta,Kediri,KRTA
+Yogyakarta,Jember,KRTA

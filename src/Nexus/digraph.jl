@@ -6,7 +6,6 @@ mutable struct Digraph{T} <: AbstractNexus{T}
     badj::Dict{T,Dict{T,Dict{Int,Nothing}}}
 end
 
-eltype(::Digraph{T}) where T = T
 is_directed(::Digraph{T}) where T = true
 Digraph{T}() where T = begin
     fadj = Dict{T,Dict{T,Dict{Int,Nothing}}}()
@@ -14,7 +13,7 @@ Digraph{T}() where T = begin
     return Digraph(0, 0, fadj, badj)
 end
 
-badj(g::Digraph{T}) = g.badj
+badj(g::Digraph) = g.badj
 
 function add_arc!(G::Digraph{T}, u::T, v::T, key::Union{Int,Nothing}=nothing) where T
     haskey(G.fadj, u) || begin
