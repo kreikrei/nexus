@@ -14,6 +14,8 @@ Digraph{T}() where T = begin
     return Digraph(0, 0, fadj, badj)
 end
 
+badj(g::Digraph{T}) = g.badj
+
 function add_arc!(G::Digraph{T}, u::T, v::T, key::Union{Int,Nothing}=nothing) where T
     haskey(G.fadj, u) || begin
        G.fadj[u] = Dict()

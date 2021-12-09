@@ -22,6 +22,13 @@ end
 nn(g::AbstractNexus) = g.nn
 na(g::AbstractNexus) = g.na
 
+fadj(g::AbstracNexus) = g.fadj
+
+nodes(g::AbstractNexus) = g.fadj |> keys
+
 src(a::AbstractArc) = a.src
 tgt(a::AbstractArc) = a.tgt
 key(a::AbstractArc) = a.key
+
+abstract type AbstractMetaNexus{T} end <: AbstractNexus{T}
+const PropDict = Dict{Symbol,Any}

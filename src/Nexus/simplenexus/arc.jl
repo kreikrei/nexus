@@ -6,6 +6,7 @@ struct Arc{T} <: AbstractArc{T}
 end
 
 eltype(::Arc{T}) where T = T
+reverse(a::Arc) = Arc(tgt(a), src(a), key(a))
 
 Arc(u::T, v::T, k::Int) where {T} = Arc{T}(u, v, k)
 Arc(u::T, v::T, k::Nothing) where {T} = Arc{T}(u, v, k)
