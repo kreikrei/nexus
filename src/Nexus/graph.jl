@@ -62,13 +62,35 @@ function rem_arc!(G::Graph{T}, u::T, v::T, key::Union{Int,Nothing} = nothing) wh
     return true
 end
 
-function Graph(D::Digraph{T}) where T
+function add_node!(g::Graph{T}, u) where {T}
+    haskey(g.fadj, u) ? begin
+        g.fadj[u] = Dict()
+        g.nn += 1
+        return u
+    end : return nothing
+end
+
+function rem_node!(g::Graph{T}, u::T) where {T}
+    haskey(g.fadj, u) || return false
+    
+    for v in keys(g.fadj[u])
+        g.na -= length(g.fadj[u][v])
+        delete!(g.fadj[v], u)
+        delete!(g.fadj[u], v)
+    end
+    delete!(g.fadj, u)
+    g.nn -= 1
+    return true
+end
+
+# CONVERSIONS
+function Graph(D::Digraph{T}) where {T}
     G = Graph{T}()
     map(a -> add_arc!(G, a), arcs(D))
     return G
 end
 
-function Digraph(G::Graph{T}) where T
+function Digraph(G::Graph{T}) where {T}
     D = Digraph{T}()
     map(a -> add_arc!(D, a), arcs(G))
     map(a -> add_arc!(D, reverse(a)), arcs(G))
