@@ -3,22 +3,35 @@ const PropDict = Dict{Symbol,Any}
 
 function show(io::IO, g::AbstractMetaNexus{T}) where {T}
     dir = is_directed(g) ? "directed" : "undireced"
-    print(io, "{$(nn(g)),{$(na(g))} $dir $T metagraph")
+    print(io, "{$(nn(g)),$(na(g))} $dir $T metagraph")
 end
 
-# Base Nexus method forwarding
-@forward AbstractMetaNexus.core fadj, nn, na, eltype, nodes
+# FORWARD DARI INTERFACE
+@forward AbstractMetaNexus.core eltype
 
-has_node(g::AbstractMetaNexus, x...) = has_node(g.core, x...)
-has_arc(g::AbstractMetaNexus, x...) = has_arc(g.core, x...)
+@forward AbstractMetaNexus.core nn
+@forward AbstractMetaNexus.core na
+@forward AbstractMetaNexus.core fadj
+@forward AbstractMetaNexus.core nodes
 
-arcs(g::AbstractMetaNexus, x...) = arcs(g.core, x...)
+has_node(g::AbstractMetaNexus{T}, n::T) where {T} = has_node(g.core, n)
+has_arc(g::AbstractMetaNexus{T}, u::T, v::T, key::Int) where {T} =
+    has_arc(g.core, u, v, key)
 
+# FORWARD DARI GRAPH & DIGRAPH
 add_arc!(g::AbstractMetaNexus, x...) = add_arc!(g.core, x...)
 rem_arc!(g::AbstractMetaNexus, x...) = rem_arc!(g.core, x...)
 
-add_node!(g::AbstractMetaNexus, x...) = rem_node!(g.core, x...)
+add_node!(g::AbstractMetaNexus, x...) = add_node!(g.core, x...)
 rem_node!(g::AbstractMetaNexus, x...) = rem_node!(g.core, x...)
+
+# FORWARD DARI ARC
+arcs(g::AbstractMetaNexus, x...) = arcs(g.core, x...)
+
+add_arc!(g::AbstractMetaNexus{T}, a::Arc{T}) where {T} = add_arc!(g.core, a)
+rem_arc!(g::AbstractMetaNexus{T}, a::Arc{T}) where {T} = rem_arc!(g.core, a)
+
+has_arc(g::AbstractMetaNexus{T}, a::Arc{T}) where {T} = has_arc(g.core, a)
 
 # universal metanexus methods
 """
@@ -60,8 +73,8 @@ has_prop(g::AbstractMetaNexus{T}, a::Arc{T}, prop::Symbol) where {T} =
 has_prop(g::AbstractMetaNexus{T}, u::T, v::T, key::Int, prop::Symbol) where {T} =
     haskey(props(g, Arc(u, v, key)), prop)
 
-_hasdict(g::AbstractMetaNexus{T}, n::T) = haskey(g.nprops, n)
-_hasdict(g::AbstractMetaNexus{T}, a::Arc{T}) = haskey(g.aprops, a)
+_hasdict(g::AbstractMetaNexus{T}, n::T) where {T} = haskey(g.nprops, n)
+_hasdict(g::AbstractMetaNexus{T}, a::Arc{T}) where {T} = haskey(g.aprops, a)
 
 """
     set_props!(g, n, dict)
@@ -71,7 +84,7 @@ _hasdict(g::AbstractMetaNexus{T}, a::Arc{T}) = haskey(g.aprops, a)
 Bulk set (merge) properties contained in `dict` with node `n`, or
 arc `a` (optionally referenced by source node `s` and target node `t`).
 """
-function set_props!(g::AbstractMetaNexus{T}, n::T, d::PropDict) where {T}
+function set_props!(g::AbstractMetaNexus{T}, n::T, d::Dict) where {T}
     if has_node(g, n)
         !_hasdict(g, n) ? g.nprops[n] = d : merge!(g.nprops[n], d)
         return true
@@ -96,32 +109,35 @@ set_prop!(g::AbstractMetaNexus{T}, u::T, v::T, key::Int, prop::Symbol, val) wher
 Remove property `prop` from node `n`, or arc `a`
 (optionally referenced by source node `s` and target node `t`).
 """
-rem_prop!(g::AbstractMetaGraph{T}, n::T, prop::Symbol) where {T} =
+rem_prop!(g::AbstractMetaNexus{T}, n::T, prop::Symbol) where {T} =
     delete!(g.nprops[n], prop)
 # rem_prop juga sama diatur di tiap2 graph digraph
 rem_prop!(g::AbstractMetaNexus{T}, u::T, v::T, key::Int, prop::Symbol) where {T} =
     rem_prop!(g, Arc(u, v, key), prop)
 
-clear_props!(g::AbstractMetaGraph{T}, n::T) where {T} =
+clear_props!(g::AbstractMetaNexus{T}, n::T) where {T} =
     _hasdict(g, n) && delete!(g.nprops, n)
-clear_props!(g::AbstractMetaGraph{T}, a::Arc{T}) where {T} =
+clear_props!(g::AbstractMetaNexus{T}, a::Arc{T}) where {T} =
     _hasdict(g, a) && delete!(g.aprops, a)
-clear_props!(g::AbstractMetaGraph{T}, u::T, v::T, key::Int) where {T} =
+clear_props!(g::AbstractMetaNexus{T}, u::T, v::T, key::Int) where {T} =
     clear_props!(g, Arc(u, v, key))
 
-filter_arcs(g::AbstractMetaNexus, fn::Function) = 
+filter_arcs(g::AbstractMetaNexus, fn::Function) =
     Iterators.filter(a -> fn(g, a), arcs(g))
 filter_arcs(g::AbstractMetaNexus, prop::Symbol) =
     filter_arcs(g, (g, a) -> has_prop(g, a, prop))
 filter_arcs(g::AbstractMetaNexus, prop::Symbol, val) =
     filter_arcs(g, (g, a) -> has_prop(g, a, prop) && get_prop(g, a, prop) == val)
 
-filter_node(g::AbstractMetaNexus, fn::Function) = 
+filter_nodes(g::AbstractMetaNexus, fn::Function) =
     Iterators.filter(n -> fn(g, n), nodes(g))
 filter_nodes(g::AbstractMetaNexus, prop::Symbol) =
     filter_nodes(g, (g, n) -> has_prop(g, n, prop))
 filter_nodes(g::AbstractMetaNexus, prop::Symbol, val) =
     filter_nodes(g, (g, n) -> has_prop(g, n, prop) && get_prop(g, n, prop) == val)
 
-
-
+# getindex
+getindex(g::AbstractMetaNexus{T}, n::T) where {T} = props(g, n)
+getindex(g::AbstractMetaNexus{T}, a::Arc{T}) where {T} = props(g, a)
+getindex(g::AbstractMetaNexus{T}, u::T, v::T, key::Int) where {T} =
+    getindex(g, Arc(u, v, key))
