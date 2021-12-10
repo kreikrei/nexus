@@ -2,8 +2,8 @@
 
 include("$(pwd())/src/Nexus/Nexus.jl")
 
-using DataFrames
 using CSV
+using DataFrames
 using Distances
 
 # khazanah_id => String
@@ -17,18 +17,6 @@ end
 struct locper
     loc::vault
     per::Int
-end
-
-mutable struct BaseNetwork{T<:vault}
-    core::Nexus.Digraph{T}
-    nprops::Dict{T, Dict{Symbol, Any}}
-    aprops::Dict{Nexus.Arc{T}, Dict{Symbol, Any}}
-end
-
-mutable struct ExpandedNetwork{T<:locper}
-    core::Nexus.Digraph{T}
-    nprops::Dict{T, Dict{Symbol, Any}}
-    aprops::Dict{Nexus.Arc{T}, Dict{Symbol, Any}}
 end
 
 
