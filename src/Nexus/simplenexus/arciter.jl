@@ -49,3 +49,5 @@ function arcs(g::Digraph{T}, ::Colon, n::Union{T,Vector{T}}) where {T}
     end
     return ArcIter(list)
 end
+
+@forward ArcIter.list rand

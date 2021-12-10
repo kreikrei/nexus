@@ -4,7 +4,8 @@ using SimpleTraits
 using Lazy
 
 import Base:
-    show, eltype, Tuple, iterate, length, reverse
+    show, eltype, Tuple, iterate, length, reverse, 
+    getindex, rand
 
 include("interface.jl")
 
