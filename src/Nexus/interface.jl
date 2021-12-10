@@ -11,8 +11,7 @@ function show(io::IO, g::AbstractNexus{T}) where {T}
 end
 
 function show(io::IO, a::AbstractArc{T}) where {T}
-    val = isnothing(a.key) ? "=" : key(a)
-    print(io, "Arc $T $(src(a)) =$val=> $(tgt(a))")
+    print(io, "Arc $T $(src(a)) -> $(tgt(a)) key $(key(a))")
 end
 
 function show(io::IO, ait::AbstractArcIter{T}) where {T}
