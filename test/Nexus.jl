@@ -38,7 +38,7 @@ Digraph(G).fadj
 3 => 1 (1)
 
 D = Digraph{Int}()
-N = 100
+N = 10
 for i in 1:N, j in 1:N
     add_arc!(D, rand(1:N), rand(1:N))
 end
@@ -61,3 +61,11 @@ isempty(Iterators.filter(p -> src(p) == 2, arcs(D)) |> collect)
 filter
 
 D.badj
+
+arcs(D,6,:) |> collect
+
+has_arc(D,Arc(1,6,4))
+has_node(D,11)
+
+arcs(D)
+reduce
