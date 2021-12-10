@@ -13,6 +13,10 @@ include("./simplenexus/digraph.jl")
 include("./simplenexus/graph.jl")
 include("./simplenexus/arciter.jl")
 
+include("./metanexus/extension.jl")
+include("./metanexus/metadigraph.jl")
+include("./metanexus/metagraph.jl")
+
 export
     Graph, Digraph, Arc, ArcIter, 
     add_arc!, rem_arc!, add_node!, rem_node!, 
