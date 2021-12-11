@@ -2,7 +2,7 @@ struct ArcIter{T} <: AbstractArcIter{T}
     list::Vector{Arc{T}}
 end
 
-@forward ArcIter.list iterate, eltype, length
+@forward ArcIter.list iterate, eltype, length, rand
 
 function arcs(g::Graph{T}) where {T}
     list = Arc{T}[]
@@ -22,6 +22,10 @@ function arcs(g::Graph{T}, n::Union{T,Vector{T}}) where {T}
     end
     return ArcIter(list)
 end
+
+# arcs dependent on directedness. why? karena klo Graph pas ditarik arc list-nya, 
+# cuma ada satu representasi dari dua arc yg bolak balik.
+# which means (u -- v dan v -- u direpresentasikan oleh u -- v)
 
 function arcs(g::Digraph{T}) where {T}
     list = Arc{T}[]
@@ -49,5 +53,3 @@ function arcs(g::Digraph{T}, ::Colon, n::Union{T,Vector{T}}) where {T}
     end
     return ArcIter(list)
 end
-
-@forward ArcIter.list rand

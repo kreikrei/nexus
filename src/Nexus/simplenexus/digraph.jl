@@ -60,7 +60,7 @@ function rem_arc!(G::Digraph{T}, u::T, v::T, key::Union{Int,Nothing} = nothing) 
 end
 
 function add_node!(g::Digraph{T}, u::T) where {T}
-    haskey(g.fadj, u) ? begin
+    !haskey(g.fadj, u) ? begin # doesn't have node, create new dict
         g.fadj[u] = Dict()
         g.badj[u] = Dict()
         g.nn += 1

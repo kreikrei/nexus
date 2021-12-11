@@ -31,6 +31,8 @@ function add_arc!(G::Graph{T}, u::T, v::T, key::Union{Int,Nothing} = nothing) wh
     return key
 end
 
+# add_arc buat graph menambahkan u--v dan v--u ke fadj
+
 function new_arc_key(g::Graph{T}, u::T, v::T) where {T}
     (haskey(g.fadj[u], v) || haskey(g.fadj[v], u)) ? begin
         keylist = union(keys(g.fadj[u][v]), keys(g.fadj[v][u]))
@@ -63,7 +65,7 @@ function rem_arc!(G::Graph{T}, u::T, v::T, key::Union{Int,Nothing} = nothing) wh
 end
 
 function add_node!(g::Graph{T}, u) where {T}
-    haskey(g.fadj, u) ? begin
+    !haskey(g.fadj, u) ? begin # doesn't have node, create new dict
         g.fadj[u] = Dict()
         g.nn += 1
         return u

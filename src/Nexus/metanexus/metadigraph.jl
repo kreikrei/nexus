@@ -1,28 +1,25 @@
 mutable struct MetaDigraph{T} <: AbstractMetaNexus{T}
     core::Digraph{T}
-    nprops::Dict{T,PropDict}
-    aprops::Dict{Arc{T},PropDict}
+    nprops::Dict{T,Dict{Symbol,Any}}
+    aprops::Dict{Arc{T},Dict{Symbol,Any}}
 end
 
-MetaDigraph(core::Digraph{T}) where {T} =
-    MetaDigraph{T}(core, Dict{T,PropDict}(), Dict{Arc{T},PropDict}())
-MetaDigraph{T}() where {T} = MetaDigraph(Digraph{T}())
-
-is_directed(::MetaDigraph) = true
-
 @forward MetaDigraph.core badj
-props(g::MetaDigraph, a::Arc) = get(PropDict, g.aprops, a)
-
+MetaDigraph{T}() where {T} = MetaDigraph(Digraph{T}())
+function MetaDigraph(core::Digraph{T}) where {T}
+    MetaDigraph{T}(core, Dict{T,Dict{Symbol,Any}}(), Dict{Arc{T},Dict{Symbol,Any}}())
+end
+is_directed(::MetaDigraph) = true
 Digraph(g::MetaDigraph{T}) where {T} = g.core
 
 function set_props!(g::MetaDigraph{T}, a::Arc{T}, d::Dict) where {T}
-    if has_arc(g, a)
-        !_hasdict(g, a) ? g.aprops[a] = d : merge!(g.aprops[a], d)
-        return true
-    else
-        return false
-    end
+    has_arc(g, a) || return false
+    !_hasdict(g, a) ? (g.aprops[a] = d) : merge!(g.aprops[a], d)
+    return true
 end
 
 rem_prop!(g::MetaDigraph{T}, a::Arc{T}, prop::Symbol) where {T} =
     delete!(g.aprops[a], prop)
+
+clear_props!(g::MetaDigraph{T}, a::Arc{T}) where {T} = 
+    _hasdict(g, a) && delete!(g.aprops, a)

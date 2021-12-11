@@ -30,6 +30,8 @@ function has_arc(g::AbstractNexus{T}, u::T, v::T, key::Int) where {T}
     haskey(g.fadj, u) && haskey(g.fadj[u],v) && haskey(g.fadj[u][v], key) && return true
     return false
 end
+# not dependent on directedness? NO. 
+# why? karena klo yg dicek fadj-nya, u--v dan v--u ada dua2nya 
 
 src(a::AbstractArc) = a.src
 tgt(a::AbstractArc) = a.tgt

@@ -1,32 +1,29 @@
 mutable struct MetaGraph{T} <: AbstractMetaNexus{T}
     core::Graph{T}
-    nprops::Dict{T,PropDict}
-    aprops::Dict{Arc{T},PropDict}
+    nprops::Dict{T,Dict{Symbol,Any}}
+    aprops::Dict{Arc{T},Dict{Symbol,Any}}
 end
 
-MetaGraph(core::Graph{T}) where {T} =
-    MetaGraph{T}(core, Dict{T,PropDict}(), Dict{Arc{T},PropDict}())
 MetaGraph{T}() where {T} = MetaGraph(Graph{T}())
-
+function MetaGraph(core::Graph{T}) where {T}
+    MetaGraph{T}(core, Dict{T,Dict{Symbol,Any}}(), Dict{Arc{T},Dict{Symbol,Any}}())
+end
 is_directed(::MetaGraph) = false
-
-props(g::MetaGraph, a::Arc) =
-    merge(get(PropDict, g.aprops, a), get(PropDict, g.aprops, reverse(a)))
-
 Graph(g::MetaGraph{T}) where {T} = g.core
 
 function set_props!(g::MetaGraph{T}, a::Arc{T}, d::Dict) where {T}
-    if has_arc(g, a)
-        _hasdict(g, a) ? merge!(g.aprops[a], d) : begin
-            _hasdict(g, reverse(a)) ? merge!(g.aprops[reverse(a)], d) : g.aprops[a] = d
-        end
-        return true
-    else
-        return false
-    end
+    (has_arc(g, a) && has_arc(g, reverse(a))) || return false
+    !_hasdict(g, a) ? g.aprops[a] = d : merge!(g.aprops[a], d)
+    !_hasdict(g, reverse(a)) ? g.aprops[reverse(a)] = d : merge!(g.aprops[reverse(a)], d)
+    return true
 end
 
 function rem_prop!(g::MetaGraph{T}, a::Arc{T}, prop::Symbol) where {T}
-    _hasdict(g, a) && delete!(g.aprops[a], prop)
-    _hasdict(g, reverse(a)) && delete!(g.aprops[reverse(a)], prop)
+    delete!(g.aprops[a], prop)
+    delete!(g.aprops[reverse(a)], prop)
+end
+
+function clear_props!(g::MetaGraph{T}, a::Arc{T}) where {T}
+    _hasdict(g, a) && delete!(g.aprops, a)
+    _hasdict(g, reverse(a)) && delete!(g.aprops, reverse(a))
 end
