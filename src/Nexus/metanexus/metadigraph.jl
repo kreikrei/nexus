@@ -14,7 +14,7 @@ Digraph(g::MetaDigraph{T}) where {T} = g.core
 
 function set_props!(g::MetaDigraph{T}, a::Arc{T}, d::Dict) where {T}
     has_arc(g, a) || return false
-    !_hasdict(g, a) ? (g.aprops[a] = d) : merge!(g.aprops[a], d)
+    !_hasdict(g, a) ? g.aprops[a] = d : merge!(g.aprops[a], d)
     return true
 end
 

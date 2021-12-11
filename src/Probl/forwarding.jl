@@ -1,3 +1,5 @@
+const Graph = Nexus.Graph
+const Digraph = Nexus.Digraph
 const MetaGraph = Nexus.MetaGraph
 const MetaDigraph = Nexus.MetaDigraph
 const Arc = Nexus.Arc

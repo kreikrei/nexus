@@ -1,0 +1,1 @@
+readdata(path::String) = CSV.File("$(pwd())$path") |> DataFrame
