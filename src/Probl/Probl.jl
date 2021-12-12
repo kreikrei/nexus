@@ -15,9 +15,7 @@ moda = readdata("/data/moda-hasil-estim copy.csv")
 basegraph = baseGraph(khazanah, trayek, moda)
 basedigraph = baseDigraph(basegraph)
 
-# TODO #1 create demand structure considering relations with locper
 permintaan = readdata("/data/permintaan-recreated.csv")
-
 
 # TODO #2 function to transform base network into expanded network
 # TODO #3 function to build deterministic model from expanded network
