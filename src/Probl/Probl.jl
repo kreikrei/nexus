@@ -32,5 +32,4 @@ expandedgraph = expand(basedigraph, demandlist)
 # 3. ensure zero sum demand
 
 # TODO #3 function to build deterministic model from expanded network
-# TODO #4 model to generate demand sample
 # TODO #5 function to build stochastic model from expanded network
