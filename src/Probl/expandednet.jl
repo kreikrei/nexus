@@ -18,3 +18,7 @@ function demands(demandlist::DataFrame)
 
     return D
 end
+
+function generatedemands(d::Dict{locper,Int}, s::Int, N::Int)
+    return [typeof(d)(k => v + rand(-s:s) for (k,v) in d) for _ in 1:N]
+end
