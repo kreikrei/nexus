@@ -25,5 +25,4 @@ basedigraph = baseDigraph(basegraph)
 # TODO #1 create demand structure considering relations with locper
 # TODO #2 function to transform base network into expanded network
 # TODO #3 function to build deterministic model from expanded network
-# TODO #4 model to generate demand sample
 # TODO #5 function to build stochastic model from expanded network
