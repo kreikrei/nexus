@@ -23,8 +23,7 @@ demandlist = demands(permintaan)
 demandscenarios = generatedemands(demandlist, 200, 1000)
 
 # input: demandlist, basedigraph
-T_min,t_min_idx = findmin([lp.per for lp in keys(demandlist)])
-T_max,t_max_idx = findmax([lp.per for lp in keys(demandlist)])
+expandedgraph = expand(basedigraph, demandlist)
 
 # 1. generate all nodes
 # 2. generate all arcs
