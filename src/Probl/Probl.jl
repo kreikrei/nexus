@@ -32,7 +32,7 @@ T_max,t_max_idx = findmax([lp.per for lp in keys(demandlist)])
 #    b. transportation arcs
 # 3. ensure zero sum demand
 
-# TODO #2 function to transform base network into expanded network
+# TODO #13 function to transform base network into expanded network (detail)
 # TODO #3 function to build deterministic model from expanded network
 # TODO #4 model to generate demand sample
 # TODO #5 function to build stochastic model from expanded network
