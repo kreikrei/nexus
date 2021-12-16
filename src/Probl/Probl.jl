@@ -17,8 +17,7 @@ moda = readdata("/data/moda-hasil-estim copy.csv")
 basegraph = baseGraph(khazanah, trayek, moda)
 basedigraph = baseDigraph(basegraph)
 
-permintaan = readdata("/data/permintaan-recreated.csv")
-
+permintaan = readdata("/data/master-permintaan.csv")
 demandlist = demands(permintaan)
 demandscenarios = generatedemands(demandlist, 200, 1000)
 
@@ -28,9 +27,8 @@ expandedgraph = expand(basedigraph, demandlist)
 using JuMP
 m = Model()
 
-@variable(m, 0 <= flow[a=arcs(expandedgraph)])
+@variable(m, 0 <= flow[a=arcs(expandedgraph)], Int)
 @variable(m, 0 <= trip[a=arcs(expandedgraph)], Int)
-# @variable(m, z[a=arcs(basedigraph)], Bin)
 
 @constraint(m, bal[n=nodes(expandedgraph)],
     sum(flow[a] for a in arcs(expandedgraph, :, [n])) -
@@ -40,13 +38,11 @@ m = Model()
 @constraint(m, cap[a=arcs(expandedgraph)],
     flow[a] <= expandedgraph[a][:Q] * trip[a]
 ) # arc capacity
-#= @constraint(m, lim[a=Nexus.filter_arcs(expandedgraph, :type, :transport)],
-    trip[a] <= expandedgraph[a][:limit] * z[Arc(src(a).loc,tgt(a).loc,key(a))]
-) =#
 
-#= @constraint(m, rev[a=arcs(basedigraph)],
-    z[a] == z[reverse(a)]
-)=#
+@constraint(m, lim[a=arcs(expandedgraph)],
+    trip[a] <= expandedgraph[a][:limit]
+)
+
 @objective(m, Min, sum(
         expandedgraph[a][:cpeti] * flow[a] + 
         expandedgraph[a][:cjarak] * expandedgraph[a][:dist] * trip[a]
@@ -57,42 +53,25 @@ m = Model()
 using Gurobi
 set_optimizer(m, Gurobi.Optimizer)
 
+set_optimizer_attributes(m, "Threads" => 8)
+set_optimizer_attributes(m, "Presolve" => 2)
+set_optimizer_attributes(m, "Cuts" => 2)
+set_optimizer_attributes(m, "MIPFocus" => 3)
+
 optimize!(m)
 
-compute_conflict!(m)
-if MOI.get(m, MOI.ConflictStatus()) != MOI.CONFLICT_FOUND
-    error("No conflict could be found for an infeasible model.")
-end
-
-for n in nodes(expandedgraph)
-    if MOI.get(m, MOI.ConstraintConflictStatus(), bal[n]) == MOI.IN_CONFLICT
-        println("$n : IN_CONFLICT")
-    end
-end
-
-
-
-arcs(expandedgraph, :, [locper(vault("Jakarta"),12)]) |> collect
-arcs(expandedgraph, [locper(vault("Jakarta"),12)], :) |> collect
-
-arcs(expandedgraph, :, [locper(vault("SINK"),14)]) |> collect
-
-bal[locper(vault("Denpasar"),12)]
-
-new_model, reference_map = copy_conflict(m)
-
-
-
-Gurobi.compute_conflict(backend(m))
-MOI.get(model, Gurobi.ConstraintConflictStatus(), c)
-MOI.get(model, Gurobi.ConstraintConflictStatus(), LowerBoundRef(x))
-
+objective_value(m)
 for a in arcs(expandedgraph)
-    if !Nexus.has_arc(expandedgraph, reverse(a))
-        println("arc $a doesn't have reverse")
-    end
+    set_prop!(expandedgraph, a, :flow, value(flow[a]))
+    set_prop!(expandedgraph, a, :trip, value(trip[a]))
 end
-@objective(FCNF, Min, sum(G[a,:f] * y[a] + G[a,:g] * x[a] for a in arcs(G)))
+
+transport_result = Iterators.filter(p -> expandedgraph[p][:flow] > 0 && expandedgraph[p][:type] == :transport, arcs(expandedgraph)) |> collect
+
+for a in transport_result
+    println("$a flow = $(value(flow[a])) | trip = $(value(trip[a]))")
+end
+
 
 # 1. generate all nodes
 # 2. generate all arcs

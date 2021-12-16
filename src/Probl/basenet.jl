@@ -11,12 +11,12 @@ function baseGraph(khazanah::DataFrame, trayek::DataFrame, moda::DataFrame)
     # add all node 
     for n in eachrow(khazanah)
         add_node!(G, vault(n.name))
-        set_props!(G, vault(n.name), Dict(:coo => (x = n.x, y = n.y), :cap => n.MAX))
+        set_props!(G, vault(n.name), Dict(:coo => (x = n.x, y = n.y), :cap => n.cap))
     end
 
     # arc attrib prep
-    modalookup = Dict(pairs(eachrow(moda)))
-    modamap = Dict(reverse.(pairs(moda.name)|>collect))
+    modalookup = Dict(eachrow(moda) |> pairs)
+    modamap = Dict(reverse.(pairs(moda.name)|> collect))
     for r in eachrow(trayek)
         a = Arc(vault(r.u), vault(r.v), modamap[r.moda])
         add_arc!(G, a)
