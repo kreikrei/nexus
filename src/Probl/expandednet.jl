@@ -32,9 +32,6 @@ function expand(basedigraph::MetaDigraph{vault}, demandlist::Dict{locper,Int})
 
     sink = locper(vault("SINK"), T_max + 1)
     add_node!(expanded, sink) # add sink
-    for n in nodes(expanded)
-        haskey(demandlist, n) || (demandlist[n] = 0)
-    end # sink added as zero demand value
     
     for i in nodes(basedigraph), t in T_min:T_max
         u = locper(i, t)
@@ -53,6 +50,9 @@ function expand(basedigraph::MetaDigraph{vault}, demandlist::Dict{locper,Int})
         end
     end # all arcs, all periods, transport arc
 
+    for n in nodes(expanded)
+        haskey(demandlist, n) || (demandlist[n] = 0)
+    end # sink added as zero demand value
     differ = values(demandlist) |> sum
     differ != 0 && (demandlist[sink] = -differ)
 
