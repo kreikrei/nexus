@@ -23,12 +23,13 @@ generatedemands(d::Dict{locper,Int}, s::Int, N::Int) = [
     typeof(d)(k => v + rand(-s:s) for (k,v) in d) for _ in 1:N
 ]
 
-function expand(basedigraph::MetaDigraph{vault}, demandlist::Dict{locper,Int})
+function expand(basedigraph::MetaDigraph{vault}, _demandlist::Dict{locper,Int})
+    expanded = MetaDigraph{locper}()
+    demandlist = Dict{locper,Int}(k => v for (k,v) in _demandlist)
+    
     periods = map(p -> p.per, keys(demandlist) |> collect)
     T_min = findmin(periods) |> first
     T_max = findmax(periods) |> first
-
-    expanded = MetaDigraph{locper}()
 
     sink = locper(vault("SINK"), T_max + 1)
     add_node!(expanded, sink) # add sink
@@ -78,5 +79,5 @@ function expand(basedigraph::MetaDigraph{vault}, demandlist::Dict{locper,Int})
         Nexus.clear_props!(expanded, n)
     end
 
-    return expanded
+    return expanded, demandlist
 end
